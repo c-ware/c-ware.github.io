@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <title>datastructures</title>
+
+    <html>
+        <body>
+            A problem that shows its head from time to time when coding in C is</br>
+            the lack of data structure implementations. The only standard data</br>
+            structures in C are statically sized arrays. Languages such as C++,</br>
+            Python, and Java have many types of data structures found in their</br>
+            standard libraries. Some operating systems do come with their own</br>
+            implementations of data structures, like FreeBSD for example, which</br>
+            <a href="https://www.freebsd.org/cgi/man.cgi?query=tree&sektion=3&format=html">has a red and black tree</a>
+            in the <code>sys/tree.h</code> header, but there is not really</br>
+            a group of data structure implementations.</br>
+            </br>
+            More often than not, these data structure implementations also have</br>
+            little to no type-safety involved, so they must resort to void pointers.</br>
+            If someone wants to fill an array with integers, they cannot do so with</br>
+            a for loop because all the pointers to integers will point to the same</br>
+            integer, so they will often resort to <code>malloc</code>'ing space for each new</br>
+            integer, for example. This not only makes the program in question</br>
+            use more heap memory, but it also makes it easier for bugs to</br>
+            introduce themselves because C's type system (what little it has</br>
+            at least) cannot detect incorrect usage of a type.</br>
+            </br>
+            A major goal of this project is to produce a reliable collection of</br>
+            data structures, which are type safe, and as portable as can be.</br>
+            To pull off type safety, we use macros to implement our data structures.</br>
+            This allows for type-neutral code, while also retaining a (small) speed</br>
+            boost from code being in-lined, although this is most likely a micro-</br>
+            optimization at best.</br>
+            </br>
+            Our data structure implementations also employ an 'operation mode' which</br>
+            allows programmers to use the data structure on the stack as opposed to</br>
+            the heap. In stack mode, Operations that involve resizing for example, will</br>
+            not resize the data structure, and will instead raise an error when full.</br>
+            The same applies to other types of operations.</br>
+            </br>
+            With all that being said, here are the following data structure implementations</br>
+            that we provide:</br>
+            <ul>
+                <li>carray</li>
+                <li>chash</li>
+            </ul>
+        </body>
+    </html>
+</html>
